@@ -9,7 +9,7 @@ Generate random jokes using jokeapi
 - EJS (Embedded JavaScript templates)
 
 ## API Used
-  
+  https://v2.jokeapi.dev/
 
 ## 🚀 Getting Started
 1. **Fork the repository**
