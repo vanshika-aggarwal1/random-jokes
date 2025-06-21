@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Random Jokes</title>
+    <link rel="icon" type="image/png" href="images/emoji.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Aboreto&family=Abril+Fatface&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/style.css" />
+  </head>
+  <body>
+    <div id="heading" class="abril-fatface-regular">
+      <h1>😊RANDOM JOKES😊</h1>
+    </div>
+    <div class="container my-5">
+      <div class="row row-cols-1 row-cols-md-3 g-4">
+        <% for( let i = 0; i < 6; i++ ) { %>
+        <div class="col">
+          <div class="card h-100">
+            <div class="card-body">
+              <div class="front aboreto-regular">
+                <h3><%= jokes[i].category.toUpperCase() %></h3>
+              </div>
+              <div class="back"><%= jokes[i].joke %></div>
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </body>
+</html>

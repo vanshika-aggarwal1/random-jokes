@@ -1,0 +1,111 @@
+body {
+  display: block;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  background-color:  #A259FF;
+  color: azure;
+  text-align: center;
+}
+
+#heading {
+  margin: 2%;
+}
+
+.container {
+  height: 75%;
+  width: 80%;
+  margin: 10%;
+  justify-content: space-around;
+}
+
+.row {
+  height: 100%;
+  --bs-gutter-x: 2rem;
+  --bs-gutter-y: 2rem;
+}
+
+.card-body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* flip card  */
+.card {
+  perspective: 100%;
+  background-image: linear-gradient(var(--rotate), #ffe600, #ff61a6, #A259FF);
+  border: none;
+  animation: spin 5s linear infinite;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.card-body {
+  position: relative;
+  width: 95%;
+  height: 95%;
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+
+.card:hover .card-body {
+  transform: rotateY(180deg);
+}
+
+.front,
+.back {
+  position: absolute;
+  width: 95%;
+  height: 90%;
+  backface-visibility: hidden;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: white;
+}
+
+.front {
+  background-color: #2824ff;
+}
+
+.back {
+  background-color: #FFF5F5;
+  color: black;
+  border: 2px solid black;
+  transform: rotateY(180deg);
+}
+
+/* fonts */
+
+.aboreto-regular {
+  font-family: "Aboreto", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.abril-fatface-regular {
+  font-family: "Abril Fatface", serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* rotate animation */
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+@keyframes spin {
+  0% {
+    --rotate: 0deg;
+  }
+  100% {
+    --rotate: 360deg;
+  }
+}
