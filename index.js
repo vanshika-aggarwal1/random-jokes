@@ -18,4 +18,6 @@ app.get("/", async (req, res) => {
   }
 });
 
-export default app;
+app.listen(port, ()=>{
+  console.log(`Listening to port ${port}`);
+});
